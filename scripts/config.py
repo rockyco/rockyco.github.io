@@ -10,20 +10,20 @@ GITHUB_API_BASE = "https://api.github.com"
 MONITOR_SETTINGS = {
     # Only monitor repositories with at least this many stars
     "min_stars": 0,
-    
+
     # Exclude forked repositories
     "exclude_forks": True,
-    
+
     # Maximum number of repositories to process
     "max_repositories": 20,
-    
+
     # Languages to highlight in statistics
     "primary_languages": ["C++", "Python", "MATLAB", "C", "Verilog", "JavaScript"],
-    
+
     # Repository categories and their emojis
     "repo_emojis": {
         "peakPicker": "🏆",
-        "pulseDetector": "🚀", 
+        "pulseDetector": "🚀",
         "llm-fpga-design": "🔧",
         "ImageProcessing": "📊",
         "estFreqOffset": "📡",
@@ -35,10 +35,10 @@ MONITOR_SETTINGS = {
 WEBSITE_SETTINGS = {
     # Files to update automatically
     "projects_file": "projects.md",
-    
+
     # Backup original files before updating
     "create_backups": True,
-    
+
     # Sections to update in projects.md
     "update_sections": [
         "repository_statistics",
@@ -57,7 +57,7 @@ COMMIT_TEMPLATES = {
 🤖 Generated with GitHub Actions
 
 Co-Authored-By: GitHub Actions <actions@github.com>""",
-    
+
     "manual_update": """🤖 Manual update: Repository data refresh
 
 - Manually triggered repository synchronization
@@ -73,10 +73,10 @@ Co-Authored-By: GitHub Actions <actions@github.com>"""
 RATE_LIMIT_SETTINGS = {
     # Delay between API calls (seconds)
     "api_delay": 1,
-    
+
     # Maximum retries for failed requests
     "max_retries": 3,
-    
+
     # Timeout for API requests (seconds)
     "request_timeout": 30
 }
