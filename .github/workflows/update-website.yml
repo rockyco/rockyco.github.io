@@ -1,0 +1,143 @@
+name: Auto-Update Website Content
+
+on:
+  schedule:
+    # Run every Monday at 6:00 AM UTC (adjust timezone as needed)
+    - cron: '0 6 * * 1'
+  
+  # Allow manual triggering from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      update_type:
+        description: 'Type of update to perform'
+        required: true
+        default: 'github_only'
+        type: choice
+        options:
+        - github_only
+        - full_update
+  
+  # Trigger when main branch is updated (optional)
+  push:
+    branches: [ main ]
+    paths: 
+      - 'scripts/**'
+      - '.github/workflows/**'
+
+env:
+  # Commit author configuration
+  GIT_AUTHOR_NAME: "GitHub Actions Bot"
+  GIT_AUTHOR_EMAIL: "actions@github.com"
+  GIT_COMMITTER_NAME: "GitHub Actions Bot"
+  GIT_COMMITTER_EMAIL: "actions@github.com"
+
+jobs:
+  update-github-data:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write  # Needed to push changes back to repository
+      
+    steps:
+    - name: 📥 Checkout Repository
+      uses: actions/checkout@v4
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        fetch-depth: 0  # Fetch full history for proper git operations
+    
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+        cache: 'pip'
+    
+    - name: 📦 Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r scripts/requirements.txt
+    
+    - name: 🔍 Check Repository Status
+      run: |
+        echo "Current repository status:"
+        git status
+        echo "Last commit:"
+        git log -1 --oneline
+    
+    - name: 🚀 Update GitHub Repository Data
+      run: |
+        echo "Starting GitHub repository data update..."
+        cd scripts
+        python update_github_projects.py
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    
+    - name: 📊 Check for Changes
+      id: changes
+      run: |
+        if [ -n "$(git status --porcelain)" ]; then
+          echo "changes_detected=true" >> $GITHUB_OUTPUT
+          echo "Changes detected in repository"
+          git status
+        else
+          echo "changes_detected=false" >> $GITHUB_OUTPUT
+          echo "No changes detected"
+        fi
+    
+    - name: 📝 Commit and Push Changes
+      if: steps.changes.outputs.changes_detected == 'true'
+      run: |
+        # Configure git
+        git config --local user.name "$GIT_AUTHOR_NAME"
+        git config --local user.email "$GIT_AUTHOR_EMAIL"
+        
+        # Add all changes
+        git add -A
+        
+        # Create commit with timestamp
+        TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+        git commit -m "🤖 Auto-update: GitHub repository sync ($TIMESTAMP)
+
+        - Updated repository statistics and project information
+        - Synchronized with latest GitHub API data
+        - Maintained consistent project showcasing
+
+        🤖 Generated with GitHub Actions
+        
+        Co-Authored-By: GitHub Actions <actions@github.com>"
+        
+        # Push changes
+        git push origin main
+        
+        echo "✅ Changes committed and pushed successfully"
+    
+    - name: 📈 Update Summary
+      if: always()
+      run: |
+        echo "## 🚀 GitHub Repository Update Summary" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "- **Workflow Trigger**: ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Timestamp**: $(date -u)" >> $GITHUB_STEP_SUMMARY
+        echo "- **Changes Detected**: ${{ steps.changes.outputs.changes_detected }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Repository**: ${{ github.repository }}" >> $GITHUB_STEP_SUMMARY
+        echo "- **Branch**: ${{ github.ref_name }}" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        
+        if [ "${{ steps.changes.outputs.changes_detected }}" == "true" ]; then
+          echo "✅ **Status**: Website updated successfully with latest GitHub data" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "ℹ️ **Status**: No updates needed - repository data is current" >> $GITHUB_STEP_SUMMARY
+        fi
+        
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### 📊 Repository Monitoring" >> $GITHUB_STEP_SUMMARY
+        echo "- Automatically tracks repository stars, forks, and activity" >> $GITHUB_STEP_SUMMARY
+        echo "- Updates project statistics and descriptions" >> $GITHUB_STEP_SUMMARY
+        echo "- Maintains synchronized content across GitHub and website" >> $GITHUB_STEP_SUMMARY
+    
+    - name: 🚨 Notify on Failure
+      if: failure()
+      run: |
+        echo "❌ GitHub repository update failed"
+        echo "Check the workflow logs for detailed error information"
+        echo "## ❌ Workflow Failed" >> $GITHUB_STEP_SUMMARY
+        echo "The automated repository update encountered an error. Please check the logs and fix any issues." >> $GITHUB_STEP_SUMMARY

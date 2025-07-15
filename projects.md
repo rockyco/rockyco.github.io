@@ -410,11 +410,20 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 ---
 
+
+## 📊 Repository Statistics
+
+- **Total Stars**: 90+ across all repositories
+- **Total Forks**: 20+ community contributions
+- **Active Repositories**: 10 public projects
+- **Primary Languages**: C++, C, Verilog
+- **Last Updated**: July 15, 2025
+
 ## GitHub Profile
 
 **Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
 
-**Total Public Repositories**: 6+ active projects  
+**Total Public Repositories**: 10 active projects  
 **Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
-**Community Impact**: 80+ total stars, active collaboration and knowledge sharing  
+**Community Impact**: 90+ total stars, active collaboration and knowledge sharing  
 **Development Timeline**: 2+ years of systematic LLM-FPGA research and deployment
