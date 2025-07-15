@@ -423,6 +423,11 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 **Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
 
+**Total Public Repositories**: 15 active projects  
+**Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
+**Community Impact**: 97+ total stars, active collaboration and knowledge sharing  
+**Development Timeline**: 2+ years of systematic LLM-FPGA research and deployment**Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
+
 **Total Public Repositories**: 10 active projects  
 **Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
 **Community Impact**: 90+ total stars, active collaboration and knowledge sharing  
