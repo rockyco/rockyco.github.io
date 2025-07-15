@@ -1,0 +1,28 @@
+title: "Jie LEI - Research Fellow"
+description: "Deploying algorithms on FPGAs more efficiently, Algorithm-hardware co-design, Matlab to HLS"
+author: "Jie LEI"
+email: "jie.lei@uts.edu.au"
+location: "Australia"
+
+baseurl: ""
+url: "https://rockyco.github.io"
+
+theme: minima
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+markdown: kramdown
+highlighter: rouge
+
+social_links:
+  github: rockyco
+
+header_pages:
+  - about.md
+  - experience.md
+  - education.md
+  - publications.md
+
+show_excerpts: true
