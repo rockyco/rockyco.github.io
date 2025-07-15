@@ -18,6 +18,10 @@ highlighter: rouge
 
 social_links:
   github: rockyco
+  email: jie.lei@uts.edu.au
+  
+# Additional contact information
+google_scholar: "https://scholar.google.com/citations?user=GinaT0wAAAAJ&hl=en"
 
 header_pages:
   - about.md

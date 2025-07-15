@@ -4,34 +4,57 @@ title: Home
 ---
 
 # Jie LEI
+**Research Fellow | University of Technology Sydney**
 
-**Research Fellow at University of Technology Sydney**
+## 🚀 Pioneering LLM-Aided FPGA Design
 
-## About Me
+I specialize in deploying algorithms on FPGAs more efficiently through cutting-edge **LLM-aided hardware design** methodologies, achieving breakthrough performance improvements in algorithm-hardware co-design.
 
-I specialize in deploying algorithms on FPGAs more efficiently, with expertise in algorithm-hardware co-design and Matlab to HLS conversion. My research focuses on bridging the gap between high-level algorithm design and efficient hardware implementation.
+### 🏆 Key Achievements
 
-## Research Interests
+- **18x latency improvements** through LLM-assisted FPGA optimization
+- **250 MHz timing closure** breakthroughs on complex signal processing systems
+- **Complete 5G NR deployment pipeline** from MATLAB to live USRP hardware
+- **Multi-agent AI framework** pioneering automated hardware design workflows
 
-- **FPGA Prototyping**: Developing efficient FPGA implementations for complex algorithms
-- **High Level Synthesis**: Converting high-level descriptions to optimized hardware
-- **Wireless Communications Systems**: Signal processing and communication system design
-- **Image Processing**: Hardware-accelerated image and signal processing algorithms
-- **Algorithm-Hardware Co-design**: Optimizing algorithms for hardware implementation
+## 🔬 Research Impact
 
-## Current Position
+My work bridges the gap between **artificial intelligence** and **hardware acceleration**, making complex algorithms more accessible through efficient FPGA implementation.
 
-**Research Fellow** at University of Technology Sydney (December 2023 - Present)  
-*Location: Australia*
+### Current Research Areas
 
-Working on cutting-edge research in FPGA-based algorithm deployment and hardware acceleration techniques.
+- **🤖 LLM-Aided Hardware Design**: Pioneering AI-assisted FPGA development workflows
+- **📡 5G/6G Signal Processing**: Real-time wireless communication system implementation  
+- **🛰️ Space-Grade Systems**: CCSDS standard implementations for satellite applications
+- **⚡ High Level Synthesis**: MATLAB to HLS automation with AI optimization
+- **🎯 Algorithm-Hardware Co-design**: Bridging software and hardware domains
 
-## Contact
+## 🌟 Research Highlights
 
-- **Location**: Australia
-- **Institution**: University of Technology Sydney
-- **Research Focus**: FPGA Algorithm Deployment, HLS, Hardware-Software Co-design
+### Open Source Contributions
+- **6+ active repositories** on GitHub with **80+ total stars**
+- **peakPicker**: First quantitative LLM-FPGA comparison study
+- **llm-fpga-design**: Multi-agent framework for automated FPGA development
+- **pulseDetector**: Revolutionary LLM-aided signal processing implementation
+
+### Real-World Deployments
+- **Complete USRP X310 pipeline** for live 5G NR signal detection
+- **2x2 MIMO testbed** for environmental sensing applications
+- **Space-grade hyperspectral compression** with 41.7% resource reduction
+
+## 🎓 Academic Excellence
+
+**PhD from Xidian University** | **15+ years academic experience** | **UCLA Visiting Scholar**
+
+Progressed from Associate Professor to Professor at Xidian University before joining UTS as Research Fellow, bringing deep expertise in signal processing and hardware implementation.
+
+## 📬 Connect
+
+- **📧 Email**: [jie.lei@uts.edu.au](mailto:jie.lei@uts.edu.au)
+- **🔗 GitHub**: [@rockyco](https://github.com/rockyco) 
+- **📚 Google Scholar**: [Research Profile](https://scholar.google.com/citations?user=GinaT0wAAAAJ&hl=en)
+- **🏛️ Institution**: University of Technology Sydney, Australia
 
 ---
 
-*Passionate about making complex algorithms more accessible through efficient hardware implementation.*
+*"Making complex algorithms accessible through efficient hardware implementation while pioneering the integration of AI and FPGA design."*
