@@ -23,6 +23,7 @@ header_pages:
   - about.md
   - experience.md
   - education.md
+  - projects.md
   - publications.md
 
 show_excerpts: true
