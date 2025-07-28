@@ -8,6 +8,95 @@ permalink: /projects/
 
 ## Featured Projects
 
+### 🎯 A2HCoder: LLM-Driven Algorithm-to-HDL Translation Framework
+[![GitHub](https://img.shields.io/badge/GitHub-Research%20Repository-blue?logo=github)](https://github.com/rockyco/LLM4FPGA) | **Academic Research** | **UTS Publication**
+
+**Hierarchical Algorithm-to-HDL Coding Agent Powered by Large Language Models**
+
+A groundbreaking research framework that addresses the critical gap between MATLAB-based algorithm design and FPGA hardware deployment, specifically targeting 5G wireless communication systems with novel LLM-driven methodologies.
+
+**Research Innovation:**
+- **First hierarchical LLM-driven algorithm-to-hardware translation framework**
+- **Three-stage processing pipeline**: Code Adaptation → Translation → Optimization & Refinement
+- **Novel approach to mitigating LLM hallucinations** through structured refinement
+- **Complete 5G SSB detection system** deployed on USRP X310 platform
+
+**Performance Breakthroughs:**
+- **98.1% LUT reduction** compared to direct translation approaches
+- **74.7% additional LUT reduction** with refinement stage
+- **16.2% latency improvement** through systematic optimization
+- **292 MHz timing closure** achieved on Kintex-7 FPGA
+
+**Academic Impact:**
+- **Authors**: Jie Lei¹, Ruofan Jia², J. Andrew Zhang¹†, Hao Zhang¹
+- **Affiliations**: ¹University of Technology Sydney, ²Xidian University
+- **Complete research paper** with LaTeX source and comprehensive evaluation
+- **Interactive web demonstration** with live implementation examples
+
+**Technical Architecture:**
+- **Horizontal Decomposition**: Breaking algorithms into modular functional blocks
+- **Vertical Refinement**: MATLAB → optimized MATLAB → HLS C++ → HDL progression
+- **Stream-based Adaptation**: Converting frame-based to streaming architectures
+- **Agent-style Feedback Loops**: Iterative LLM revision based on synthesis results
+
+**Real-World Validation:**
+- **Five core 5G NR submodules**: pssCorrelator, calcThreshold, peakFinder, collectLocations, extractSSBsig
+- **Complete USRP X310 deployment** with functional validation
+- **RFNoC framework integration** for software-defined radio applications
+
+**Technologies:** MATLAB, HLS C++, Vitis HLS, Xilinx toolchain, RFNoC, AXI4-Stream, USRP X310, LaTeX
+
+---
+
+### 🚀 MATLAB2HLS: Universal Algorithm Transformation Framework
+[![GitHub](https://img.shields.io/badge/GitHub-Production%20Framework-blue?logo=github)](https://github.com/rockyco/MATLAB2HLS) | **Production Ready** | **Enterprise Grade**
+
+**Universal MATLAB-to-HLS Transformation Framework with Agent-Based Automation**
+
+The practical implementation evolution of the A2HCoder research, featuring a production-ready framework that bridges algorithm development and FPGA deployment through sophisticated agent orchestration and universal template libraries.
+
+**Framework Innovation:**
+- **Multi-Stage Progressive Enhancement**: Foundation → Advanced → Industrial progression
+- **Universal Template Library**: 21+ foundation templates supporting any MATLAB algorithm
+- **Agent-Based Automation System**: 6 specialized agents orchestrating complete workflow
+- **Quality Assurance Framework**: Mandatory simulation gates ensuring MATLAB equivalence
+
+**Performance Achievements:**
+- **95% error reduction** through foundation templates
+- **217 MHz timing closure** with advanced FSM architectures
+- **256-cycle latency reduction** via industrial framework optimizations
+- **17.7x speedup improvement** demonstrated in laggedProduct case study
+
+**Production Features:**
+- **Template-Driven Development**: 60% development time reduction
+- **Algorithm-Agnostic Transformation**: Universal patterns for any MATLAB code
+- **Enterprise CI/CD Integration**: Industrial-grade deployment capabilities
+- **Comprehensive Validation**: Two-stage floating-point → fixed-point validation
+
+**Case Study Results:**
+**Case 1 - laggedProduct Complex Matrix Algorithm:**
+- **94% latency reduction**: 147,767 → 8,333 cycles
+- **Interface optimization**: AXI → BRAM transformation
+- **Resource efficiency**: Systematic LUT and DSP optimization
+
+**Case 2 - 5G NR PSS Correlator:**
+- **High-throughput design**: 18.75 MSps processing rate
+- **3 parallel correlators** for all PSS sequences
+- **Fixed-point optimization** with careful bit-width analysis
+- **Complete MATLAB golden reference validation**
+
+**Agent Orchestration System:**
+- **Analysis Agent**: Code structure and dependency analysis
+- **Implementation Agent**: HLS C++ code generation with pragmas
+- **Simulation Agent**: Comprehensive testbench validation
+- **Synthesis Agent**: Automated Vitis HLS workflow management
+- **Optimization Agent**: Performance and resource optimization
+- **Validation Agent**: End-to-end verification and reporting
+
+**Technologies:** MATLAB, C++/HLS, Python, Xilinx Vitis HLS, AXI Stream, Agent Architecture, CI/CD Pipeline
+
+---
+
 ### 🏆 peakPicker - LLM-Aided FPGA Design Comparative Study
 [![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/peakPicker) | ⭐ 8 stars | 🍴 3 forks
 
@@ -415,20 +504,16 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 - **Total Stars**: 90+ across all repositories
 - **Total Forks**: 20+ community contributions
-- **Active Repositories**: 10 public projects
-- **Primary Languages**: C++, C, Verilog
-- **Last Updated**: July 15, 2025
+- **Active Repositories**: 12 public projects
+- **Primary Languages**: MATLAB, C++/HLS, C, Verilog, Python
+- **Last Updated**: July 28, 2025
 
 ## GitHub Profile
 
 **Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
 
-**Total Public Repositories**: 15 active projects  
-**Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
-**Community Impact**: 97+ total stars, active collaboration and knowledge sharing  
-**Development Timeline**: 2+ years of systematic LLM-FPGA research and deployment**Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
-
-**Total Public Repositories**: 10 active projects  
-**Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
+**Total Public Repositories**: 12 active projects  
+**Focus Areas**: LLM-Driven Hardware Design, FPGA Acceleration, 5G Signal Processing, Algorithm-to-Hardware Translation  
 **Community Impact**: 90+ total stars, active collaboration and knowledge sharing  
-**Development Timeline**: 2+ years of systematic LLM-FPGA research and deployment
+**Development Timeline**: 3+ years of systematic LLM-FPGA research and deployment  
+**Research Output**: Academic publications, production frameworks, and real-world USRP deployments
