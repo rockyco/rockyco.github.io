@@ -1,15 +1,14 @@
 #!/usr/bin/env python3
 """
 GitHub Repository Monitor and Website Updater
-Automatically fetches latest GitHub repository data and updates projects.md
+Automatically updates repository statistics in projects.md
 """
 
 import os
 import re
-import json
 import requests
 from datetime import datetime
-from typing import Dict, List, Optional
+from typing import Dict, List
 
 class GitHubProjectUpdater:
     def __init__(self, username: str = "rockyco"):
@@ -37,140 +36,115 @@ class GitHubProjectUpdater:
             print(f"Error fetching repositories: {e}")
             return []
     
-    def get_repository_stats(self, repo_name: str) -> Dict:
-        """Get detailed repository statistics"""
-        url = f"{self.api_base}/repos/{self.username}/{repo_name}"
+    def calculate_repository_stats(self, repositories: List[Dict]) -> Dict:
+        """Calculate aggregate statistics from repositories"""
+        # Filter out forks and count only meaningful repos
+        non_fork_repos = [repo for repo in repositories if not repo.get('fork', False)]
         
-        try:
-            response = requests.get(url, headers=self.headers)
-            response.raise_for_status()
-            repo_data = response.json()
-            
-            # Get latest commits
-            commits_url = f"{self.api_base}/repos/{self.username}/{repo_name}/commits"
-            commits_response = requests.get(commits_url, headers=self.headers, params={'per_page': 5})
-            recent_commits = commits_response.json() if commits_response.status_code == 200 else []
-            
-            # Get languages
-            languages_url = f"{self.api_base}/repos/{self.username}/{repo_name}/languages"
-            languages_response = requests.get(languages_url, headers=self.headers)
-            languages = languages_response.json() if languages_response.status_code == 200 else {}
-            
-            return {
-                'name': repo_data['name'],
-                'description': repo_data.get('description', ''),
-                'stars': repo_data['stargazers_count'],
-                'forks': repo_data['forks_count'],
-                'language': repo_data.get('language', 'Unknown'),
-                'languages': languages,
-                'url': repo_data['html_url'],
-                'created_at': repo_data['created_at'],
-                'updated_at': repo_data['updated_at'],
-                'recent_commits': recent_commits,
-                'topics': repo_data.get('topics', []),
-                'size': repo_data['size']
-            }
-        except requests.RequestException as e:
-            print(f"Error fetching repository stats for {repo_name}: {e}")
-            return {}
-    
-    def format_project_section(self, repo_stats: Dict) -> str:
-        """Format repository data for projects.md"""
-        name = repo_stats['name']
-        description = repo_stats.get('description', 'No description available')
-        stars = repo_stats['stars']
-        forks = repo_stats['forks']
-        url = repo_stats['url']
-        language = repo_stats.get('language', 'Unknown')
-        updated = datetime.fromisoformat(repo_stats['updated_at'].replace('Z', '+00:00'))
+        # Calculate totals
+        total_stars = sum(repo['stargazers_count'] for repo in non_fork_repos)
+        total_forks = sum(repo['forks_count'] for repo in non_fork_repos)
         
-        # Get primary emoji based on project type
-        emoji_map = {
-            'peakPicker': '🏆',
-            'pulseDetector': '🚀', 
-            'llm-fpga-design': '🔧',
-            'ImageProcessing': '📊',
-            'estFreqOffset': '📡',
-            'LabTraining': '🎓'
+        # Count active repositories (with stars or recent updates)
+        active_repos = []
+        for repo in non_fork_repos:
+            if repo['stargazers_count'] > 0:
+                active_repos.append(repo)
+            else:
+                # Check if updated recently (within 90 days)
+                try:
+                    updated = datetime.fromisoformat(repo['updated_at'].replace('Z', '+00:00'))
+                    ninety_days_ago = datetime.now().replace(tzinfo=updated.tzinfo) - timedelta(days=90)
+                    if updated > ninety_days_ago:
+                        active_repos.append(repo)
+                except:
+                    pass
+        
+        # Get language distribution
+        languages = {}
+        for repo in active_repos:
+            lang = repo.get('language')
+            if lang:
+                languages[lang] = languages.get(lang, 0) + 1
+        
+        # Sort languages by frequency
+        sorted_languages = sorted(languages.items(), key=lambda x: x[1], reverse=True)
+        primary_languages = [lang[0] for lang in sorted_languages[:5]]
+        
+        return {
+            'total_stars': total_stars,
+            'total_forks': total_forks,
+            'active_count': len(active_repos),
+            'total_count': len(non_fork_repos),
+            'primary_languages': primary_languages,
+            'last_updated': datetime.now().strftime('%B %d, %Y')
         }
-        emoji = emoji_map.get(name, '⚡')
-        
-        # Format the section
-        section = f"""### {emoji} {name}
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)]({url}) | ⭐ {stars} stars | 🍴 {forks} forks
-
-**{description}**
-
-**Technologies:** {language}  
-**Last Updated:** {updated.strftime('%B %Y')}
-
----
-"""
-        return section
-        
-    def update_projects_markdown(self, repositories: List[Dict]) -> bool:
-        """Update the projects.md file with latest repository data"""
-        projects_file = 'projects.md'
+    
+    def update_repository_statistics(self, stats: Dict) -> bool:
+        """Update only the repository statistics in projects.md"""
+        # Look for projects.md in parent directory when running from scripts folder
+        projects_file = '../projects.md' if os.path.exists('../projects.md') else 'projects.md'
         
         if not os.path.exists(projects_file):
             print(f"Projects file {projects_file} not found")
             return False
             
         try:
-            # Read current projects.md
+            # Read current content
             with open(projects_file, 'r', encoding='utf-8') as f:
                 content = f.read()
             
-            # Filter repositories (only public repos with stars > 0)
-            filtered_repos = [repo for repo in repositories if repo['stars'] > 0 and not repo.get('fork', False)]
+            # Update Repository Statistics section
+            stats_pattern = r'(## 📊 Repository Statistics\s*\n\n)(.*?)(\n\n##|\Z)'
             
-            # Sort by stars (descending)
-            filtered_repos.sort(key=lambda x: x['stars'], reverse=True)
+            new_stats_content = f"""- **Total Stars**: {stats['total_stars']}+ across all repositories
+- **Total Forks**: {stats['total_forks']}+ community contributions
+- **Active Repositories**: {stats['active_count']} public projects
+- **Primary Languages**: {', '.join(stats['primary_languages'])}
+- **Last Updated**: {stats['last_updated']}"""
             
-            # Generate repository stats section
-            stats_section = "\n## 📊 Repository Statistics\n\n"
-            total_stars = sum(repo['stars'] for repo in filtered_repos)
-            total_forks = sum(repo['forks'] for repo in filtered_repos)
-            languages = {}
-            
-            for repo in filtered_repos:
-                lang = repo.get('language', 'Unknown')
-                if lang and lang != 'Unknown':
-                    languages[lang] = languages.get(lang, 0) + 1
-            
-            stats_section += f"- **Total Stars**: {total_stars}+ across all repositories\n"
-            stats_section += f"- **Total Forks**: {total_forks}+ community contributions\n"
-            stats_section += f"- **Active Repositories**: {len(filtered_repos)} public projects\n"
-            stats_section += f"- **Primary Languages**: {', '.join(list(languages.keys())[:3])}\n"
-            stats_section += f"- **Last Updated**: {datetime.now().strftime('%B %d, %Y')}\n\n"
-            
-            # Find GitHub Profile section and update stats
-            github_profile_pattern = r'(## GitHub Profile.*?)(\n\n|\Z)'
-            if re.search(github_profile_pattern, content, re.DOTALL):
-                # Update existing GitHub Profile section
-                updated_github_section = f"""## GitHub Profile
-
-**Visit my complete GitHub profile**: [https://github.com/{self.username}](https://github.com/{self.username})
-
-**Total Public Repositories**: {len(filtered_repos)} active projects  
-**Focus Areas**: FPGA Design, LLM Integration, Signal Processing, Educational Resources  
-**Community Impact**: {total_stars}+ total stars, active collaboration and knowledge sharing  
-**Development Timeline**: 2+ years of systematic LLM-FPGA research and deployment"""
+            if re.search(stats_pattern, content, re.DOTALL):
+                # Replace existing stats
+                def replace_stats(match):
+                    return match.group(1) + new_stats_content + match.group(3)
                 
-                content = re.sub(github_profile_pattern, updated_github_section, content, flags=re.DOTALL)
+                content = re.sub(stats_pattern, replace_stats, content, flags=re.DOTALL)
+                print("✅ Updated Repository Statistics section")
+            else:
+                print("⚠️  Repository Statistics section not found")
             
-            # Add repository stats before GitHub Profile section if it doesn't exist
-            if "Repository Statistics" not in content:
-                github_profile_pos = content.find("## GitHub Profile")
-                if github_profile_pos != -1:
-                    content = content[:github_profile_pos] + stats_section + content[github_profile_pos:]
+            # Update GitHub Profile section
+            profile_pattern = r'(## GitHub Profile\s*\n\n.*?)(\*\*Total Public Repositories\*\*: )(\d+)( active projects)'
+            if re.search(profile_pattern, content, re.DOTALL):
+                content = re.sub(
+                    profile_pattern,
+                    rf'\g<1>\g<2>{stats["active_count"]}\g<4>',
+                    content,
+                    flags=re.DOTALL
+                )
+                print("✅ Updated GitHub Profile repository count")
+            
+            # Update total stars in GitHub Profile
+            profile_stars_pattern = r'(\*\*Community Impact\*\*: )(\d+)\+( total stars)'
+            if re.search(profile_stars_pattern, content):
+                content = re.sub(
+                    profile_stars_pattern,
+                    rf'\g<1>{stats["total_stars"]}+\g<3>',
+                    content
+                )
+                print("✅ Updated GitHub Profile star count")
             
             # Write updated content
             with open(projects_file, 'w', encoding='utf-8') as f:
                 f.write(content)
             
-            print(f"✅ Updated {projects_file} with latest GitHub repository data")
-            print(f"📊 Stats: {total_stars} stars, {total_forks} forks, {len(filtered_repos)} repositories")
+            print(f"\n📊 Summary of updates:")
+            print(f"  - Total Stars: {stats['total_stars']}+")
+            print(f"  - Total Forks: {stats['total_forks']}+")
+            print(f"  - Active Repositories: {stats['active_count']}")
+            print(f"  - Primary Languages: {', '.join(stats['primary_languages'])}")
+            print(f"  - Last Updated: {stats['last_updated']}")
+            
             return True
             
         except Exception as e:
@@ -179,7 +153,7 @@ class GitHubProjectUpdater:
     
     def run(self) -> bool:
         """Main execution method"""
-        print("🚀 Starting GitHub repository monitoring...")
+        print("🚀 Starting GitHub repository statistics update...")
         
         # Fetch repositories
         repositories = self.fetch_repositories()
@@ -189,21 +163,16 @@ class GitHubProjectUpdater:
         
         print(f"📦 Found {len(repositories)} repositories")
         
-        # Get detailed stats for each repository
-        detailed_repos = []
-        for repo in repositories:
-            if not repo.get('fork', False):  # Skip forked repos
-                stats = self.get_repository_stats(repo['name'])
-                if stats:
-                    detailed_repos.append(stats)
+        # Calculate statistics
+        stats = self.calculate_repository_stats(repositories)
         
-        # Update projects.md
-        success = self.update_projects_markdown(detailed_repos)
+        # Update only statistics in projects.md
+        success = self.update_repository_statistics(stats)
         
         if success:
-            print("✅ GitHub repository monitoring completed successfully")
+            print("\n✅ Repository statistics updated successfully")
         else:
-            print("❌ GitHub repository monitoring failed")
+            print("\n❌ Failed to update repository statistics")
             
         return success
 
@@ -213,5 +182,7 @@ def main():
     return updater.run()
 
 if __name__ == "__main__":
+    # Import timedelta here since it's only needed for the stats calculation
+    from datetime import timedelta
     success = main()
     exit(0 if success else 1)
