@@ -553,7 +553,7 @@ My open-source projects demonstrate the cutting-edge integration of **Artificial
 My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 **Phase 1: Proof of Concept (Dec 2024)**
-*"I've been thinking for a long time about how to create an EDA tool that can automatically convert Matlab code into HLS C++ code... using LLMs for this kind of conversion. To my surprise, the results were amazing."*
+*"I've been thinking for a long time about how to create an EDA tool that can automatically convert MATLAB code into HLS C++ code... using LLMs for this kind of conversion. To my surprise, the results were amazing."*
 
 **Phase 2: Advanced Optimization (2025)**
 - **One-Shot Translation**: Claude 3.7 Sonnet generating perfect, implementation-ready code on first attempt

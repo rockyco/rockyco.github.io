@@ -50,7 +50,7 @@ Progressed from Associate Professor to Professor at Xidian University before joi
 
 ## 📬 Connect
 
-- **📧 Email**: [jie.lei@uts.edu.au](mailto:jie.lei@uts.edu.au)
+- **📧 Email**: [jiejielei@gmail.com](mailto:jiejielei@gmail.com)
 - **🔗 GitHub**: [@rockyco](https://github.com/rockyco) 
 - **📚 Google Scholar**: [Research Profile](https://scholar.google.com/citations?user=GinaT0wAAAAJ&hl=en)
 - **🏛️ Institution**: University of Technology Sydney, Australia
