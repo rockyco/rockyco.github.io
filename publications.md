@@ -23,7 +23,7 @@ My research contributions span several key areas in hardware-software co-design 
 - Algorithm-hardware co-design methodologies
 
 ### High Level Synthesis (HLS)
-- Matlab to HLS conversion methodologies
+- MATLAB to HLS conversion methodologies
 - Optimization techniques for HLS-generated hardware
 - Design space exploration for algorithm implementations
 - Automated hardware generation from high-level descriptions

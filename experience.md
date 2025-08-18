@@ -71,6 +71,6 @@ Conducted collaborative research in advanced signal processing and hardware impl
 - **Wireless Testbeds**: 2x2 MIMO systems for environmental sensing applications
 
 ### 🎓 Research & Leadership Excellence
-- **15+ Years Academic Experience**: From Associate Professor to Research Fellow
-- **International Collaboration**: UCLA visiting scholar and global research partnerships  
+- **15+ Years Academic Experience**: Comprehensive expertise in hardware design and signal processing
+- **International Collaboration**: UCLA visiting scholar and global research partnerships
 - **Open Source Impact**: 80+ GitHub stars and community-driven research methodologies
