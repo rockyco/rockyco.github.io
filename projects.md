@@ -598,11 +598,11 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 ## 📊 Repository Statistics
 
-- **Total Stars**: 148+ across all repositories
-- **Total Forks**: 30+ community contributions
+- **Total Stars**: 150+ across all repositories
+- **Total Forks**: 31+ community contributions
 - **Active Repositories**: 20 public projects
-- **Primary Languages**: MATLAB, C++, Python, Verilog, VHDL
-- **Last Updated**: November 03, 2025
+- **Primary Languages**: C++, MATLAB, Python, Verilog, VHDL
+- **Last Updated**: November 10, 2025
 
 ## GitHub Profile
 
@@ -610,6 +610,6 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 **Total Public Repositories**: 20 active projects  
 **Focus Areas**: LLM-Driven Hardware Design, FPGA Acceleration, 5G Signal Processing, Algorithm-to-Hardware Translation  
-**Community Impact**: 148+ total stars, active collaboration and knowledge sharing  
+**Community Impact**: 150+ total stars, active collaboration and knowledge sharing  
 **Development Timeline**: 3+ years of systematic LLM-FPGA research and deployment  
 **Research Output**: Academic publications, production frameworks, and real-world USRP deployments
