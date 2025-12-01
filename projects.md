@@ -602,7 +602,7 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 - **Total Forks**: 31+ community contributions
 - **Active Repositories**: 20 public projects
 - **Primary Languages**: C++, MATLAB, Python, Verilog, VHDL
-- **Last Updated**: November 24, 2025
+- **Last Updated**: December 01, 2025
 
 ## GitHub Profile
 
