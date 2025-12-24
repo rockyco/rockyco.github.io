@@ -48,52 +48,178 @@ A groundbreaking research framework that addresses the critical gap between MATL
 
 ---
 
-### 🚀 MATLAB2HLS: Universal Algorithm Transformation Framework
-[![GitHub](https://img.shields.io/badge/GitHub-Production%20Framework-blue?logo=github)](https://github.com/rockyco/MATLAB2HLS) | **Production Ready** | **Enterprise Grade**
+### 🚀 MATLAB2HLS: Self-Learning Algorithm-to-Hardware Framework v13.0
+[![GitHub](https://img.shields.io/badge/GitHub-Production%20Framework-blue?logo=github)](https://github.com/rockyco/MATLAB2HLS) | **Self-Learning System** | **24+ Case Studies**
 
-**Universal MATLAB-to-HLS Transformation Framework with Agent-Based Automation**
+**Hierarchical LLM-Driven Framework for Automated MATLAB-to-FPGA Transformation**
 
-The practical implementation evolution of the A2HCoder research, featuring a production-ready framework that bridges algorithm development and FPGA deployment through sophisticated agent orchestration and universal template libraries.
+A self-learning system that bridges the semantic gap between high-level MATLAB algorithms and optimized FPGA implementations. The hierarchical approach prevents LLM hallucinations through structured multi-stage transformation with validation gates at each phase.
 
-**Framework Innovation:**
-- **Multi-Stage Progressive Enhancement**: Foundation → Advanced → Industrial progression
-- **Universal Template Library**: 21+ foundation templates supporting any MATLAB algorithm
-- **Agent-Based Automation System**: 6 specialized agents orchestrating complete workflow
-- **Quality Assurance Framework**: Mandatory simulation gates ensuring MATLAB equivalence
+**Core Architecture:**
+- **7-Phase Pipeline**: Decomposition → Test Generation → Flatten → Optimize → HLS Generation → HLS Optimization → Integration
+- **8 Specialized Agents**: Each phase managed by domain-specific LLM agents with defined inputs/outputs
+- **Self-Learning Engine**: Continuously improves success rate (70% → 95%+) through pattern accumulation
+- **Multi-Target Output**: Xilinx FPGA, Intel FPGA, ASIC via Verilog/VHDL
 
-**Performance Achievements:**
-- **95% error reduction** through foundation templates
-- **217 MHz timing closure** with advanced FSM architectures
-- **256-cycle latency reduction** via industrial framework optimizations
-- **17.7x speedup improvement** demonstrated in laggedProduct case study
+**Performance Results:**
+- **157× error reduction** on complex algorithms (72.17% → 0.00%)
+- **97.3% latency reduction** with streaming architecture optimization
+- **360 MHz timing closure** exceeding 300 MHz targets
+- **99.54% functional accuracy** verified through RTL co-simulation
 
-**Production Features:**
-- **Template-Driven Development**: 60% development time reduction
-- **Algorithm-Agnostic Transformation**: Universal patterns for any MATLAB code
-- **Enterprise CI/CD Integration**: Industrial-grade deployment capabilities
-- **Comprehensive Validation**: Two-stage floating-point → fixed-point validation
+**Case Studies (24+ Examples):**
+- **Harris Corner Detection**: Zero-error implementation, <1% FPGA utilization
+- **5G NR SSB Detection**: 5-module system at 292 MHz, 279 DSPs
+- **Lagged Product**: 100% MATLAB equivalence, 360 MHz operation
+- **WLAN Synchronization**: Filter detection, CFO estimation modules
+- **ISAC Systems**: FFT implementations, adaptive subspace algorithms
 
-**Case Study Results:**
-**Case 1 - laggedProduct Complex Matrix Algorithm:**
-- **94% latency reduction**: 147,767 → 8,333 cycles
-- **Interface optimization**: AXI → BRAM transformation
-- **Resource efficiency**: Systematic LUT and DSP optimization
+**Key Innovations:**
+- **Horizontal Decomposition**: Breaks complex algorithms into modular blocks
+- **Vertical Refinement**: MATLAB → optimized MATLAB → HLS C++ → RTL
+- **Stream-based Adaptation**: Batch processing to streaming architecture
+- **Blocking Validation Gates**: 5 phase-aligned hooks ensure quality
 
-**Case 2 - 5G NR PSS Correlator:**
-- **High-throughput design**: 18.75 MSps processing rate
-- **3 parallel correlators** for all PSS sequences
-- **Fixed-point optimization** with careful bit-width analysis
-- **Complete MATLAB golden reference validation**
+**Technologies:** MATLAB, Vitis HLS 2024.2, Verilog/VHDL, Python, Multi-Agent Architecture, Xilinx UltraScale+
 
-**Agent Orchestration System:**
-- **Analysis Agent**: Code structure and dependency analysis
-- **Implementation Agent**: HLS C++ code generation with pragmas
-- **Simulation Agent**: Comprehensive testbench validation
-- **Synthesis Agent**: Automated Vitis HLS workflow management
-- **Optimization Agent**: Performance and resource optimization
-- **Validation Agent**: End-to-end verification and reporting
+---
 
-**Technologies:** MATLAB, C++/HLS, Python, Xilinx Vitis HLS, AXI Stream, Agent Architecture, CI/CD Pipeline
+### 📡 RX_AP_UE: High-Performance 8×8 MIMO-OFDM Wireless Receiver
+**Production-Ready** | **200 MHz** | **1.5 Gbps Throughput**
+
+**FPGA-Based MIMO-OFDM Receiver for Access Point and User Equipment Applications**
+
+A complete wireless communication receiver implementation supporting 8×8 MIMO-OFDM with advanced signal processing including Cholesky-based equalization, carrier frequency offset compensation, and multi-stage channel estimation optimized for Xilinx Vitis HLS.
+
+**Signal Processing Pipeline:**
+```
+RF Input → CFO Compensation → FFT → Channel Estimation → Cholesky Decomposition → Two-Stage Equalization → Payload Recovery
+```
+
+**Core Modules:**
+- **applyCFO**: CORDIC-based carrier frequency offset compensation
+- **runFFT**: OFDM demodulation via streaming FFT
+- **calcMatrixH**: 8×8 MIMO channel estimation using LTS
+- **runCholesky**: Matrix factorization for optimal equalization
+- **equalFirstStage/equalSecondStage**: Two-stage MMSE equalization
+- **recoverPayLoad**: Multi-modulation support (QPSK, QAM16, QAM64, QAM256)
+
+**Performance Metrics:**
+- **Clock Frequency**: 200 MHz (5ns period)
+- **Throughput**: 1.5 Gbps in 8×8 MIMO configuration
+- **Latency**: ~800-1000 cycles total pipeline
+- **Resources**: 987 DSPs, 234 BRAMs, 67K LUTs, 89K FFs
+
+**Development Evolution:**
+- **21 integration versions** showing progressive optimization
+- **39% DSP utilization** with efficient Cholesky implementation
+- **Co-simulation verified** against MATLAB golden reference
+
+**Technologies:** Vitis HLS, Vitis Solver Library, MIMO-OFDM, Cholesky Decomposition, AXI-Stream, Zynq UltraScale+
+
+---
+
+### 🐍 Python2HLS: Python-to-Hardware Transformation Framework
+**Sub-Agent Architecture** | **IP Library Integration** | **345 MHz Achieved**
+
+**Automated Python Algorithm Transformation to Hardware-Efficient HLS C++**
+
+Building on MATLAB2HLS architecture, this framework transforms Python algorithmic code (NumPy/SciPy) into optimized HLS implementations with automatic IP library detection and integration for maximum performance.
+
+**Core Architecture:**
+- **6 Specialized Agents**: Workflow Coordinator, Python Analysis, Implementation, Synthesis, Optimization, Failure Resolution
+- **6 Quality Gates**: Python Validation → Architectural Feasibility → Functional Validation → Synthesis → Co-simulation → Implementation
+- **IP Library Integration**: Automatic detection and utilization of optimized IP cores
+
+**IP Library Performance:**
+| Algorithm | Manual | With IP Library | Improvement |
+|-----------|--------|-----------------|-------------|
+| FIR Filter | 8200+ cycles | 1067 cycles | 87% faster |
+| FFT | Variable | Fixed II=1 | 60-80% faster |
+| Matrix Mult | O(n³) | Systolic | 40-70% faster |
+
+**Python-Specific Features:**
+- **NumPy Pattern Recognition**: `np.convolve()` → FIR IP, `np.fft.fft()` → FFT IP
+- **Automatic Type Inference**: Float operations → optimal fixed-point
+- **Generator Support**: Python generators map directly to HLS streams
+- **SciPy Acceleration**: `scipy.signal.lfilter()` → IIR Filter IP
+
+**Performance Results:**
+- **345 MHz achieved** (72% above 200 MHz target)
+- **87% latency reduction** through IP library utilization
+- **25-50% resource savings** vs naive implementation
+- **<15 minutes** total transformation time
+
+**Technologies:** Python, NumPy, SciPy, Vitis HLS, IP Libraries (FIR, FFT, Matrix), Multi-Agent System
+
+---
+
+### 🔧 CPP2FPGA: C++ to FPGA Transformation Framework
+**6-Phase Pipeline** | **JPEG-LS Demonstration** | **8-Gate Compliance**
+
+**Systematic Transformation of Algorithmic C++ to Synthesizable HLS Code**
+
+A comprehensive framework for converting standard C++ algorithms into hardware-efficient HLS implementations, demonstrated with JPEG-LS image compression (ITU-T T.87 standard).
+
+**6-Phase Transformation Pipeline:**
+```
+Phase 1: Algorithm Analysis    → Identify HLS incompatibilities, propose modules
+Phase 2: Code Restructuring    → Transform to modular HLS-compatible C++
+Phase 3: Test Generation       → Create per-module test vectors with golden refs
+Phase 4: HLS Transformation    → Convert to synthesizable HLS with pragmas
+Phase 5: HLS Optimization      → Optimize latency, resources, timing
+Phase 6: HLS Integration       → Integrate modules into complete system
+```
+
+**JPEG-LS Encoder Modules:**
+- **module1_line_buffer**: Streaming line buffer management
+- **module2_context_selector**: Context ID selection for prediction
+- **module3_predictor**: MED (Median Edge Detection) prediction
+- **module4_error_mapper**: Prediction error mapping
+- **module5_context_modeler**: Adaptive context modeling
+- **module6_golomb_encoder**: Golomb-Rice entropy coding
+
+**8-Gate HLS Compliance System:**
+| Gate | Requirement |
+|------|-------------|
+| G1 | Algorithmic computation (no hardcoded results) |
+| G2 | Accuracy < 1e-05 vs golden reference |
+| G3 | Single main processing loop |
+| G4 | Fixed loop bounds (compile-time constants) |
+| G5 | Fixed-size arrays only |
+| G6 | Sequential access pattern preferred |
+| G7 | Single input element per iteration |
+| G8 | ≤2 BRAM accesses per cycle |
+
+**Key Features:**
+- **Per-module validation**: Independent testing before integration
+- **Universal Makefile**: Standardized build system for all modules
+- **Phase validation hooks**: Automated quality checks at each stage
+
+**Technologies:** C++17, Vitis HLS 2024.2, JPEG-LS (ITU-T T.87), Multi-Agent Architecture, Zynq UltraScale+
+
+---
+
+### 📊 PAM4Receiver: AI-Driven Communication System Implementation
+[![GitHub](https://img.shields.io/badge/GitHub-Communication%20Systems-blue?logo=github)](https://github.com/rockyco/PAM4Receiver) | **4 Stars** | **AI-Driven HDL**
+
+**Advanced PAM4 Receiver Implementation with AI-Driven HDL Code Generation**
+
+Sophisticated communication system implementation demonstrating AI-assisted development for high-speed digital communication, featuring comprehensive PAM4 signal processing with automated HDL generation and optimization.
+
+**Technical Achievements:**
+- **PAM4 Signal Processing**: Complete receiver implementation for high-speed communication
+- **AI-Driven HDL Generation**: Automated code generation with optimization strategies
+- **Communication System Design**: End-to-end signal processing pipeline
+- **Performance Optimization**: Systematic approach to timing and resource optimization
+
+**Advanced Features:**
+- **Multi-Level Signaling**: PAM4 modulation scheme for increased data rates
+- **Automated Code Generation**: AI-assisted HDL development workflow
+- **System-Level Design**: Complete receiver architecture implementation
+- **Verification Framework**: Comprehensive testing and validation methodology
+
+**Technologies:** MATLAB, HDL Code Generation, PAM4 Modulation, Communication Systems, AI-Assisted Design
 
 ---
 
@@ -129,7 +255,7 @@ The evolution of the A2HCoder research into a production-ready, industrial-grade
 ---
 
 ### 🔍 HarrisCorner: AI-Driven Computer Vision Acceleration
-[![GitHub](https://img.shields.io/badge/GitHub-Computer%20Vision-blue?logo=github)](https://github.com/rockyco/HarrisCorner) | **Zero-Error Implementation** | **366.7 MHz Performance**
+[![GitHub](https://img.shields.io/badge/GitHub-Computer%20Vision-blue?logo=github)](https://github.com/rockyco/HarrisCorner) | **8 Stars** | **Zero-Error Implementation** | **366.7 MHz Performance**
 
 **Complete AI-Powered MATLAB-to-FPGA Transformation for Computer Vision**
 
@@ -194,7 +320,7 @@ Production-grade application for real-time detection and analysis of 5G New Radi
 ---
 
 ### 🏆 peakPicker - LLM-Aided FPGA Design Comparative Study
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/peakPicker) | ⭐ 8 stars | 🍴 3 forks
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/peakPicker) | ⭐ 8 Stars | 🍴 3 Forks
 
 **A Comprehensive Comparative Study of LLM-Aided FPGA Design Flow**
 
@@ -221,7 +347,7 @@ A groundbreaking open-source project that bridges the gap between algorithm deve
 ---
 
 ### 🚀 pulseDetector - LLM-Aided Signal Processing
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/pulseDetector) | ⭐ 27 stars | 🍴 4 forks
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/pulseDetector) | ⭐ 29 Stars | 🍴 4 Forks
 
 **LLM-Aided FPGA Design for Signal Processing Applications**
 
@@ -250,7 +376,7 @@ Revolutionary approach demonstrating how Large Language Models can bridge the ga
 ---
 
 ### 🔧 llm-fpga-design - Automated Design Flow
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/llm-fpga-design) | ⭐ 15 stars | 🍴 5 forks
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/llm-fpga-design) | ⭐ 17 Stars | 🍴 5 Forks
 
 **LLM-Aided FPGA Design and Debug Flow**
 
@@ -285,7 +411,7 @@ Innovative framework from University of Technology Sydney that leverages LLM AI-
 ---
 
 ### 📊 ImageProcessing - LLM-Guided Sobel Filter Optimization
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/ImageProcessing) | ⭐ 14 stars | 🍴 2 forks
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/ImageProcessing) | ⭐ 14 Stars | 🍴 2 Forks
 
 **Multi-Implementation Sobel Filter Study with LLM-Based Optimization**
 
@@ -307,7 +433,7 @@ Comprehensive exploration demonstrating dramatic memory and latency improvements
 ---
 
 ### 🎓 LabTraining - Educational Resources
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/LabTraining) | ⭐ 10 stars | 🍴 1 fork
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/LabTraining) | ⭐ 10 Stars | 🍴 1 Fork
 
 **Digital System Design: Training Lessons and Exercise Projects**
 
@@ -324,7 +450,7 @@ Comprehensive educational materials for teaching digital system design and FPGA 
 ---
 
 ### 📡 estFreqOffset - Carrier Frequency Estimation
-[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/estFreqOffset) | ⭐ 8 stars | 🍴 5 forks
+[![GitHub](https://img.shields.io/badge/GitHub-View%20Repository-blue?logo=github)](https://github.com/rockyco/estFreqOffset) | ⭐ 10 Stars | 🍴 5 Forks
 
 **LLM-Assisted FPGA Design for Carrier Frequency Offset Estimation**
 
@@ -345,28 +471,63 @@ Revolutionary approach leveraging Large Language Models to automate conversion f
 
 ## 🔬 Research & Proprietary Projects
 
-### 🛰️ Hyperspectral Image Compression - CCSDS 123.0-B-1 Implementation
+### 🛰️ HSI_Compressor: CCSDS 123.0-B-1 Hyperspectral Image Compression
 
-**LLM-Assisted Integration of HLS Modules for FPGA Acceleration**
+**LLM-Assisted Multi-Module HLS Integration for Space Applications**
 
-Developed a modular FPGA implementation of the CCSDS 123.0-B-1 standard for space-based hyperspectral imaging applications, featuring unprecedented LLM-assisted system-level design.
+A complete FPGA implementation of the CCSDS 123.0-B-1 lossless compression standard for hyperspectral imaging, demonstrating LLM-assisted integration of 6 specialized HLS modules into a cohesive dataflow pipeline.
+
+**System Architecture (6 Integrated Modules):**
+- **convertDataOrder**: Input data rearrangement for efficient processing
+- **calcLocalDifference**: Local difference computation between neighboring pixels
+- **calcPredictedSample**: Sample prediction based on spatial neighbors
+- **calcMappedResidual**: Prediction residual mapping to positive integers
+- **calcParameterKt**: Dynamic Golomb-Rice coding parameter optimization
+- **codeMappedResidual**: Entropy coding for final compression output
 
 **Technical Achievements:**
-- **41.7% reduction in FPGA LUT usage** for Golomb-Rice coding
-- **43.5% improvement in post-route timing performance**  
-- **Perfect functional fidelity** with CCSDS standard
-- **Five integrated modules**: Local Difference Calculation, Prediction, Mapping, Parameter Optimization, Coding
+- **41.7% LUT reduction** for Golomb-Rice coding module
+- **43.5% timing improvement** in post-route performance
+- **Perfect CCSDS compliance** with standard reference validation
+- **Stream-based dataflow** with `hls::stream` interfaces throughout
 
-**LLM-Guided Innovations:**
-- **Centralized Definition Architecture**: Standardized sharing across complex HLS modules
-- **Stream-Based Pipeline Design**: High-throughput dataflow with balanced stages
-- **Type-Safe Module Integration**: Adapter functions for error-free communication
-- **Variable Shift Decomposition**: Novel switch-based approach replacing resource-intensive barrel shifters
+**LLM-Guided Integration Innovations:**
+- **Centralized Definition Management**: `common_defs.hpp` for standardized dimensions/types
+- **Type Adapter Functions**: Bridging different data types across module interfaces
+- **Dataflow Pipeline Architecture**: Concurrent module execution with `#pragma HLS DATAFLOW`
+- **Interface Standardization**: Consistent streaming patterns across all modules
 
-**Space Technology Impact:**
-- **Critical for space-grade FPGAs** with tight resource constraints
-- **Radiation hardening requirements** addressed through lean, robust designs
-- **Size, Weight, and Power (SWaP) constraints** optimized for onboard applications
+**Integration Challenges Solved:**
+- **Macro Redefinition Conflicts**: Unified dimension definitions across modules
+- **Type Compatibility**: Automatic adapters between `data_t`, `datamv_t`, `mapVal_t`
+- **Pipeline Synchronization**: Balanced stream depths for throughput optimization
+
+**Technologies:** Vitis HLS, CCSDS 123.0-B-1, Stream-based Dataflow, Hyperspectral Imaging, Space-grade FPGA
+
+### 📻 Multi-User Massive MIMO for Tactical Networks
+
+**FPGA Implementation of Robust Interference Mitigation for Contested Environments**
+
+Research implementation of multi-user massive MIMO technologies for wireless tactical ad-hoc networks operating in contested environments with jamming signals, featuring complete FPGA signal processing chain.
+
+**Core Innovations:**
+- **Time-Domain Spatial Filtering (TDSF)**: Novel approach to suppress broadband jamming before FFT
+- **Frequency-Domain MMSE Equalization**: Decision feedback for narrowband interference mitigation
+- **Complete FPGA Architecture**: Signal acquisition, synchronization, FFT, channel estimation, Cholesky decomposition
+
+**Signal Processing Pipeline:**
+- **Signal Acquisition**: Packet detection and timing synchronization
+- **FFT Processing**: OFDM demodulation with frequency-domain output
+- **Channel Estimation**: Pilot-based MIMO channel matrix estimation
+- **Cholesky Decomposition**: Efficient matrix factorization for equalization
+- **Forward/Backward Substitution**: Linear system solving for signal recovery
+
+**System Capabilities:**
+- **MIMO-OFDM with SDMA**: Spatial Division Multiple Access for multi-user support
+- **Anti-Jamming**: Robust operation under intentional interference
+- **Field-Validated**: Prototype tested in real tactical network scenarios
+
+**Technologies:** Massive MIMO, OFDM, MMSE Equalization, Cholesky Decomposition, Anti-Jamming, FPGA Implementation
 
 ### 🔄 Advanced Viterbi Decoder Implementation
 
@@ -600,16 +761,16 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 - **Total Stars**: 158+ across all repositories
 - **Total Forks**: 31+ community contributions
-- **Active Repositories**: 20 public projects
+- **Active Repositories**: 35+ public projects
 - **Primary Languages**: MATLAB, C++, Python, Verilog, VHDL
-- **Last Updated**: December 22, 2025
+- **Last Updated**: December 25, 2025
 
 ## GitHub Profile
 
 **Visit my complete GitHub profile**: [https://github.com/rockyco](https://github.com/rockyco)
 
-**Total Public Repositories**: 20 active projects  
-**Focus Areas**: LLM-Driven Hardware Design, FPGA Acceleration, 5G Signal Processing, Algorithm-to-Hardware Translation  
-**Community Impact**: 158+ total stars, active collaboration and knowledge sharing  
-**Development Timeline**: 3+ years of systematic LLM-FPGA research and deployment  
-**Research Output**: Academic publications, production frameworks, and real-world USRP deployments
+**Total Public Repositories**: 35+ active projects
+**Focus Areas**: LLM-Driven Hardware Design, FPGA Acceleration, 5G/MIMO Signal Processing, Algorithm-to-Hardware Translation
+**Framework Portfolio**: MATLAB2HLS, Python2HLS, CPP2FPGA - Complete algorithm transformation ecosystem
+**Development Timeline**: 3+ years of systematic LLM-FPGA research and deployment
+**Research Output**: Academic publications, production frameworks, and real-world USRP/MIMO deployments

@@ -12,10 +12,11 @@ I specialize in deploying algorithms on FPGAs more efficiently through cutting-e
 
 ### 🏆 Key Achievements
 
-- **18x latency improvements** through LLM-assisted FPGA optimization
-- **250 MHz timing closure** breakthroughs on complex signal processing systems
-- **Complete 5G NR deployment pipeline** from MATLAB to live USRP hardware
-- **Multi-agent AI framework** pioneering automated hardware design workflows
+- **157× error reduction** through self-learning LLM-driven FPGA optimization
+- **360 MHz timing closure** on complex signal processing systems
+- **Complete algorithm-to-FPGA ecosystem**: MATLAB2HLS, Python2HLS, CPP2FPGA frameworks
+- **8×8 MIMO-OFDM receiver** at 200 MHz with 1.5 Gbps throughput
+- **Multi-agent AI framework** with 8 specialized agents for automated hardware design
 
 ## 🔬 Research Impact
 
@@ -32,15 +33,16 @@ My work bridges the gap between **artificial intelligence** and **hardware accel
 ## 🌟 Research Highlights
 
 ### Open Source Contributions
-- **6+ active repositories** on GitHub with **80+ total stars**
-- **peakPicker**: First quantitative LLM-FPGA comparison study
-- **llm-fpga-design**: Multi-agent framework for automated FPGA development
-- **pulseDetector**: Revolutionary LLM-aided signal processing implementation
+- **35+ active repositories** on GitHub with **110+ total stars**
+- **MATLAB2HLS v13**: Self-learning framework with 24+ case studies
+- **Python2HLS**: NumPy/SciPy to HLS with 87% latency reduction
+- **CPP2FPGA**: JPEG-LS compression with 6-phase transformation pipeline
+- **RX_AP_UE**: 8×8 MIMO-OFDM receiver at 1.5 Gbps
 
 ### Real-World Deployments
 - **Complete USRP X310 pipeline** for live 5G NR signal detection
-- **2x2 MIMO testbed** for environmental sensing applications
-- **Space-grade hyperspectral compression** with 41.7% resource reduction
+- **8×8 MIMO wireless receiver** with Cholesky-based equalization
+- **Space-grade hyperspectral compression** (CCSDS 123.0-B-1) with 41.7% resource reduction
 
 ## 🎓 Academic Excellence
 
