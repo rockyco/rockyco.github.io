@@ -759,11 +759,11 @@ My research demonstrates a systematic evolution in LLM-aided hardware design:
 
 ## 📊 Repository Statistics
 
-- **Total Stars**: 201+ across all repositories
+- **Total Stars**: 205+ across all repositories
 - **Total Forks**: 41+ community contributions
 - **Active Repositories**: 26 public projects
 - **Primary Languages**: Python, C++, MATLAB, Verilog, VHDL
-- **Last Updated**: April 27, 2026
+- **Last Updated**: May 04, 2026
 
 ## GitHub Profile
 
