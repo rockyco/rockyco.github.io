@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="site-title" href="{{ '/' | relative_url }}">Jie Lei</a>
+    <nav class="site-nav">
+      {% for p in site.header_pages %}
+        {% assign pg = site.pages | where: "path", p | first %}
+        {% if pg %}<a href="{{ pg.url | relative_url }}"{% if page.url == pg.url %} class="active"{% endif %}>{{ pg.title }}</a>{% endif %}
+      {% endfor %}
+      <a class="ext" href="https://github.com/{{ site.github_username }}" rel="me">GitHub</a>
+      <a class="ext" href="{{ site.google_scholar }}">Scholar</a>
+    </nav>
+  </div>
+</header>
