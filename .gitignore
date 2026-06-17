@@ -58,3 +58,6 @@ __pycache__/
 *.egg-info/
 
 myJobs/
+
+# Local-only (GitHub Pages builds with its own toolchain)
+Gemfile
