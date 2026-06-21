@@ -76,13 +76,13 @@ everything saved is area. The only remaining catch is not to drop the clock whil
 
 Folding reuses one add-compare-select engine across several clocks instead of building one per
 state. The AI folded, and the area came down immediately: the constraint-length-seven core fell
-from about 1,900 logic cells to roughly 740 - about a 60% saving.
+from about 1,900 logic cells to roughly 680 - about a 65% saving.
 
 <figure>
   <a class="zoom" href="{{ '/assets/blog/viterbi-resource-folding/en/resource_shrink.png' | relative_url }}">
     <img src="{{ '/assets/blog/viterbi-resource-folding/en/resource_shrink.png' | relative_url }}" alt="Logic area falling across fold factors while the clock holds.">
   </a>
-  <figcaption>More folding, less logic - the area falls by about 60% while the clock stays in range.</figcaption>
+  <figcaption>More folding, less logic - the area falls by about 65% while the clock stays in range.</figcaption>
 </figure>
 
 Then it measured the clock, and the clock had dropped. It did not stop there.
