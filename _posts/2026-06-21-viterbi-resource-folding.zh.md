@@ -63,13 +63,13 @@ Viterbi 就是这么做的。
 ## 第一个杠杆：折叠
 
 折叠就是把一套加-比-选引擎分几拍轮流复用，而不是给每个状态各造一套。AI 一折，面积就降下来：K=7
-的核从大约 2,300 个查找表降到 740 上下，省了接近三分之二。
+的核从大约 1,900 个查找表降到 740 上下，省了约六成。
 
 <figure>
   <a class="zoom" href="{{ '/assets/blog/viterbi-resource-folding/zh/resource_shrink.png' | relative_url }}">
     <img src="{{ '/assets/blog/viterbi-resource-folding/zh/resource_shrink.png' | relative_url }}" alt="折叠越多逻辑越少，时钟守住。">
   </a>
-  <figcaption>折叠越多，逻辑越少：面积砍到三分之一，时钟还守在原来的区间。</figcaption>
+  <figcaption>折叠越多，逻辑越少：面积砍掉约六成，时钟还守在原来的区间。</figcaption>
 </figure>
 
 但 AI 量了一下时钟，掉了。它没有停在这里。
