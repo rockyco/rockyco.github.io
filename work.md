@@ -46,7 +46,9 @@ in the design reports.
 
   <div class="card">
     <h3>Convolutional decoder</h3>
-    <p>A maximum-likelihood decoder for the codes used in nearly every wireless standard, from Wi-Fi to satellite links. It decodes continuously and sits in a slower clock region so its feedback loop never holds back the rest of the receiver.</p>
+    <p>A maximum-likelihood decoder for the codes used in nearly every wireless standard, from Wi-Fi to satellite links. An AI folded it down to a third of its logic while holding the full-speed clock, producing a menu of size-versus-speed points; the compact version runs inside the Wi-Fi receiver above, every mode bit-exact.</p>
+    {% assign vpost = site.posts | where: "translation_id", "viterbi-resource-folding" | where: "lang", "en" | first %}
+    <p class="meta"><a href="{{ vpost.url | relative_url }}">Read the full write-up</a></p>
   </div>
 
 </div>
