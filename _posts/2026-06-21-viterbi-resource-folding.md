@@ -147,7 +147,7 @@ out by trying them:
 
 The AI also tried a third approach: a double-buffered ping-pong read. It built it, synthesized it,
 and ran it all the way through place-and-route - not a paper estimate. The result was a regression,
-about 12 MHz slower than the rotating read. So the AI backed it out.
+bigger and about 27 MHz slower than the rotating read. So the AI backed it out.
 
 That negative result is not wasted. It is what makes the final numbers trustworthy: the chosen
 design won against a real alternative that was measured and rejected, not against a strawman.
