@@ -134,6 +134,10 @@ radio-channel event rather than a flaw in the design. The transmitted image come
   <figcaption>The live link, captured over the air on the radio: a clean 64-QAM constellation, the channel it had to undo, and the image rebuilding at full yield.</figcaption>
 </figure>
 
+That dashboard is not a screenshot. It replays the real captured data in your browser and
+rebuilds the image as the packets arrive, with no hardware or install needed. You can open it
+here: [the live link analyzer](https://algosilicon.com/assets/demos/wlan-pluto-rx/).
+
 ## Why it matters
 
 The receiver is one design. The method is the reusable part, and it is the same method any time a
@@ -151,6 +155,8 @@ signal on a radio you can hold, every mode bit-exact, is the result that counts.
 
 ## Notes
 
+- Live demo: the over-the-air link analyzer replays real captured data in the browser at
+  [algosilicon.com/assets/demos/wlan-pluto-rx](https://algosilicon.com/assets/demos/wlan-pluto-rx/).
 - Hardware: ADALM-Pluto, built on a Xilinx Zynq-7010 (part xc7z010clg225-1).
 - Numbers cited are post-place-and-route timing and resource figures and measured hardware decode
   runs, traced to the design's current tool reports.
