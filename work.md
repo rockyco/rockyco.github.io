@@ -19,6 +19,13 @@ in the design reports.
   </div>
 
   <div class="card">
+    <h3>Quantum error-correction decoder</h3>
+    <p>The real-time classical decoder a fault-tolerant quantum computer cannot run without, rebuilt from first principles for IBM's gross code and generated from a model checked against the mathematics at every step. It lands on the same silicon envelope as the published reference, and its one real headroom turns out to be algorithmic: stop a stuck attempt early, which cuts the worst-case time and even improves accuracy.</p>
+    {% assign qpost = site.posts | where: "translation_id", "ibm-relay-bp-quantum-ldpc" | where: "lang", "en" | first %}
+    <p class="meta"><a href="{{ qpost.url | relative_url }}">Read the full write-up</a></p>
+  </div>
+
+  <div class="card">
     <h3>802.11a Wi-Fi receiver</h3>
     <p>A complete Wi-Fi receiver, generated without anyone hand-writing the hardware, that decodes standard signals end to end and runs on a pocket-sized, USB-powered radio. Fed a standard waveform from MATLAB's own toolbox, it recovers the transmitted image bit-for-bit across every supported modulation.</p>
     <p class="meta"><a href="{{ '/blog/' | relative_url }}">Read the full write-up</a></p>
