@@ -32,6 +32,15 @@ the second - run a module over there, read a value out of the far memory - has t
 and come back. So the whole design reduces to one question: is the seam honest? If a byte that
 goes out comes back changed, nothing built on top of it can be trusted.
 
+The link itself is one we wrote, kept deliberately thin. The vendor's own link block did not work
+out on this board, so instead of leaning on a heavy protocol we made our own and let it stay
+simple. It carries framed messages, and the very first piece of each message says what it is. Some
+are memory requests: read or write the second chip's memory. Some are control messages, right down
+to rebooting the far chip over the same link, with no cable to reach for. And some are just raw
+data for the decoder - there is no separate "run compute" command at all, because the decoder sits
+right in the path, so a message arriving simply is its input. Thin link, and the first thing in
+each message decides what happens.
+
 We settled that the only way that counts: on the real hardware, against a reference, byte for
 byte. Not a simulation that agrees with itself, but the actual chips, checked against a known-good
 answer.
