@@ -115,8 +115,16 @@ assumption.
 
 The uncomfortable detail: the record even carried a note saying it had been verified on silicon.
 The note was real; the verification behind it was the accidental lock of the very first lane. The
-answer had been sitting on the schematic the whole time. Rewired to the two correct lanes, the link
+answer had been sitting on the schematic the whole time. Pointed at the two correct lanes, the link
 came up on the first try and matched byte for byte.
+
+And the reversal was not just a note written backwards. It is baked into the board itself: the
+lanes between the two chips are wired in reversed order in the copper, and that cannot be changed.
+This is the real reason the vendor's ready-made link was never going to work here. It insists that
+both chips agree on the order of the lanes before it will combine them, so with the order reversed
+in the copper, it could never lock. That is why we wrote our own thin link in the first place: it
+does not try to combine the lanes that way, so it simply does not care that their order is
+reversed.
 
 ## What survives this
 
