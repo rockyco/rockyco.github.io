@@ -1,6 +1,6 @@
 # rockyco.github.io
 
-Personal academic website for Jie Lei, Research Fellow at the University of Technology Sydney.
+Personal website for Jie Lei, FPGA design engineer for communications IP and founder of AlgoSilicon.
 Built with Jekyll and deployed on GitHub Pages.
 
 Live site: https://rockyco.github.io
