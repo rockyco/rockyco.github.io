@@ -1,5 +1,5 @@
 title: "Jie Lei"
-description: "FPGA design for communications - error-correction and signal-processing IP and complete wireless physical layers, verified from model to silicon."
+description: "Python2Verilog - an evidence-governed framework that turns algorithms into verified FPGA IP cores and hardware systems, from model to silicon."
 author: "Jie Lei"
 email: "jiejielei@gmail.com"
 location: "United Kingdom"

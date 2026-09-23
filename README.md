@@ -1,6 +1,6 @@
 # rockyco.github.io
 
-Personal website for Jie Lei, FPGA design engineer for communications IP and founder of AlgoSilicon.
+Personal website for Jie Lei, creator of the Python2Verilog framework and founder of AlgoSilicon.
 Built with Jekyll and deployed on GitHub Pages.
 
 Live site: https://rockyco.github.io

@@ -4,29 +4,29 @@ title: About
 permalink: /about/
 ---
 
-I am an FPGA design engineer working on communications hardware, and the founder of AlgoSilicon,
-a small company that builds and licenses verified FPGA IP. My work covers error-correction
-decoders (LDPC, turbo and Viterbi), signal-processing cores such as FFTs and filters, and complete
-wireless physical layers for Wi-Fi, 4G and 5G. I take a design from the algorithm and its
-fixed-point behaviour through the architecture, the circuit and timing closure, to hardware
-running on real boards.
+I build Python2Verilog, a framework that takes an executable algorithm to working FPGA silicon, as
+IP cores and complete hardware systems, and I am the founder of AlgoSilicon, a small company that
+builds and licenses verified FPGA IP. The framework is not tied to one application domain: so far it
+has produced error-correction decoders (LDPC, turbo and Viterbi), signal-processing cores such as
+FFTs and filters, and complete wireless physical layers for Wi-Fi, 4G and 5G, each taken from the
+algorithm and its fixed-point behaviour through the architecture, the circuit and timing closure, to
+hardware running on real boards.
 
-Most of this work comes out of Python2Verilog, the algorithm-to-silicon framework I created and develop as an
-individual project; its results led to a government commercialisation grant from Australia's Economic
-Accelerator. Every design
+Python2Verilog is an individual project; its results led to a government commercialisation grant from
+Australia's Economic Accelerator. Every design
 is built as a math reference, then a hardware-timed model, then the circuit, and each layer is checked against
 the one above it before the result is confirmed again on silicon. AI proposes candidates, but independent checks,
 proven to catch planted faults, decide what is accepted. Designs that pass become reusable families and ship as
 modular kits, from portable RTL up to a working application on a board.
 
-I have spent twenty years on signal-processing hardware, first leading a university research group on satellite
-and airborne systems.
+Before building it, I spent twenty years on signal-processing hardware, leading a university research group in
+image processing and computer vision on FPGA, including on-board image compression for lunar and Mars missions.
 
 ## Experience
 
 **Founder and Principal FPGA Engineer** - AlgoSilicon Ltd, United Kingdom (2026 - present)
-Communications and error-correction IP and design services, from architecture through
-verification to customer delivery.
+FPGA IP cores and design services built with Python2Verilog, from architecture through
+verification to customer delivery. Current lines: error correction, DSP and wireless physical layers.
 
 **Research Fellow** - University of Technology Sydney, Australia (Dec 2023 - Dec 2025)
 Wireless physical-layer and MAC hardware on RFSoC and Zynq platforms, and an algorithm-to-hardware

@@ -4,7 +4,7 @@ title: Work
 permalink: /work/
 ---
 
-Communications hardware I have designed, from error-correction and signal-processing cores to complete wireless physical layers. Everything below was generated and verified with the same AI-assisted method: a design is built
+Designs built with Python2Verilog, across error correction, signal processing and wireless systems, from single cores to complete physical layers. Everything below was generated and verified with the same AI-assisted method: a design is built
 as a math reference, then a hardware-timed model, then the circuit, and each layer is
 machine-checked against the one above it, so correctness rests on evidence rather than
 assumption. These are described in plain terms, as methods and capabilities rather than
